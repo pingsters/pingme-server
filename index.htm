@@ -1,23 +1,35 @@
 <html>
-<body>
-<style>
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: black;
-    }
-    #div {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: black;
-    }
-</style>
-<div align="center">
-    <iframe height="930" width="438" frameborder="0" src="https://invis.io/J39ILGJE8"></iframe>
-</div>
-</body>
+    <body>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: black;
+            }
+            #div {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: black;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+            <div align="center">
+                <video id="video"></video>
+            </div>
+        <script>
+            if(Hls.isSupported()) {
+              var video = document.getElementById('video');
+              var hls = new Hls();
+              hls.loadSource('http://www.streambox.fr/playlists/test_001/stream.m3u8');
+              hls.attachMedia(video);
+              hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                video.play();
+              });
+            }
+        </script>
+    </body>
 </html>
