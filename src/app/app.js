@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
+import config from 'config';
+
 const app = express();
 
 // Create application/x-www-form-urlencoded parser
@@ -13,6 +15,7 @@ app.get('/index.htm', (req, res) => {
   res.sendFile(path.resolve(__dirname + "/" + VIEW_PATH + "/" + "index.htm" ));
 });
 
-app.listen(3000, () =>{
+const PORT = process.env.PORT || config.SERVER.PORT;
+app.listen(PORT, () =>{
   console.log('pingme listening on port 3000!');
 });
