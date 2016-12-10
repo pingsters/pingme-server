@@ -1,5 +1,6 @@
 <html>
-    <body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             html, body {
                 width: 100%;
@@ -14,10 +15,17 @@
                 margin: 0;
                 padding: 0;
                 background-color: black;
+                color: white;
+            }
+            p.title {
+                font: 50px arial, sans-serif;
             }
         </style>
+    </head>
+    <body>
         <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
-            <div align="center">
+            <div id="div" align="center">
+                <p class="title">PING.ME</p>
                 <video id="video"></video>
             </div>
         <script>
