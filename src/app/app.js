@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 import config from 'config';
+import router from './routes';
 
 const app = express();
 
@@ -10,6 +11,8 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const VIEW_PATH = './../../view';
 app.use(express.static(VIEW_PATH));
+
+app.use('*', router);
 
 app.get('/index.htm', (req, res) => {
   res.sendFile(path.resolve(__dirname + "/" + VIEW_PATH + "/" + "index.htm" ));
