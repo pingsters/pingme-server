@@ -1,5 +1,5 @@
 {
-  SERVER: {
-    PORT: 3000
+  "SERVER": {
+    "PORT": 3000
   }
 }
